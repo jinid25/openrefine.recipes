@@ -1,0 +1,13 @@
+##string replace for error based characters
+
+#Question Marks � showing in your data
+split(escape(value,'xml'),"&#160;")[0]
+
+#"AÃ¯n TÃ©muchent" ---> "Aïn Témuchent"
+value.reinterpret("utf-8")
+
+#"AT&amp;amp;T" --> "AT&T"
+value.unescape("html").unescape("xml")
+
+#replacing one string with another and building additional
+value.replace("xx", "XX").replace("yy", "YY").replace("zz","ZZ")
